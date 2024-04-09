@@ -8,6 +8,7 @@ import android.graphics.RectF;
 public class Sprite extends RectF {
     private int dY, dX, color;
     public static int h, w;
+    private int cycle = 0;
 
     public Sprite(float left, float top, float right, float bottom, int dX, int dY, int color) {
         super(left, top, right, bottom);
@@ -35,11 +36,11 @@ public class Sprite extends RectF {
     public void update(){
         offset(dX, dY);
         if(this.right > w){
-            System.out.print("Yes");
+            //System.out.print("Yes");
             setdX(-dX);
         }
         if(this.left < 0){
-            System.out.print("Yes");
+            //System.out.print("Yes");
             setdX(-dX);
         }
         if(this.top < 0){
@@ -48,6 +49,22 @@ public class Sprite extends RectF {
         if(this.bottom > h){
             setdY(-dY);
         }
+        /*
+        if(cycle%50 == 0) {
+            if (dX < 0) {
+                dX -= 1;
+            } else {
+                dX += 1;
+            }
+            if (dY < 0) {
+                dY -= 1;
+            } else {
+                dY += 1;
+            }
+        }
+
+         */
+        cycle += 1;
     }
 
     public void draw(Canvas canvas){
