@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <view
+        android:id="@+id/draw"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         class = "com.hatami.lab09.DrawView"

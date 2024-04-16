@@ -35,18 +35,18 @@ public class Sprite extends RectF {
 
     public void update(){
         offset(dX, dY);
-        if(this.right > w){
+        if(this.right > w && dX > 0){
             //System.out.print("Yes");
             setdX(-dX);
         }
-        if(this.left < 0){
+        if(this.left < 0 && dX < 0){
             //System.out.print("Yes");
             setdX(-dX);
         }
-        if(this.top < 0){
+        if(this.top < 0 && dY < 0){
             setdY(-dY);
         }
-        if(this.bottom > h){
+        if(this.bottom > h && dY > 0){
             setdY(-dY);
         }
         /*
